@@ -1,0 +1,111 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }
+    configurations.all {
+        resolutionStrategy.force 'com.android.support:support-annotations:23.1.0'
+    }
+    defaultConfig {
+        applicationId "com.ellalee.travelmaker"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 2
+        versionName "1.1"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    configurations.all {
+        resolutionStrategy {
+            force 'com.google.code.findbugs:jsr305:3.0.1'
+        }
+    }
+    configurations.all {
+        resolutionStrategy.force 'com.android.support:support-annotations:23.1.0'
+    }
+    configurations.all {
+        resolutionStrategy {
+            force 'com.android.support:support-annotations:23.3.0'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            //android.enableAapt2 = true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    //google map api
+    implementation 'com.google.android.gms:play-services-maps:15.0.0'
+    implementation 'com.google.android.gms:play-services-location:15.0.0'
+    //google places
+    implementation 'com.google.android.gms:play-services-places:15.0.0'
+    implementation 'com.google.android.gms:play-services-auth:15.0.0'
+    implementation 'pub.devrel:easypermissions:0.3.0'
+    implementation 'com.google.android.gms:play-services-places:15.0.0'
+    implementation('com.google.api-client:google-api-client-android:1.23.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    implementation('com.google.apis:google-api-services-script:v1-rev197-1.23.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    implementation('com.google.apis:google-api-services-calendar:v3-rev319-1.23.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    implementation('com.google.apis:google-api-services-gmail:v1-rev86-1.23.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+
+
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:support-vector-drawable:27.1.1'
+    testImplementation 'junit:junit:4.12'
+
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    androidTestImplementation 'com.android.support:support-annotations:27.1.1'
+
+
+/*    implementation files('C:/Users/jiwon/Travel-Maker/libs/activation.jar')
+    implementation files('C:/Users/jiwon/Travel-Maker/libs/additionnal.jar')
+    implementation files('C:/Users/jiwon/Travel-Maker/libs/mail.jar')
+<<<<<<< HEAD
+*/
+//    implementation files('F:/Travel-Maker/libs/additionnal.jar')
+//    implementation files('F:/Travel-Maker/libs/activation.jar')
+//    implementation files('F:/Travel-Maker/libs/mail.jar')
+//
+//    implementation files('C:/Users/jiwon/Travel-Maker/libs/activation.jar')
+//    implementation files('C:/Users/jiwon/Travel-Maker/libs/additionnal.jar')
+//    implementation files('C:/Users/jiwon/Travel-Maker/libs/mail.jar')
+
+
+    implementation files('F:/Travel-Maker/libs/additionnal.jar')
+    implementation files('F:/Travel-Maker/libs/activation.jar')
+    implementation files('F:/Travel-Maker/libs/mail.jar')
+//      implementation files('D:/18_1/Travel-Maker/libs/mail.jar')
+//      implementation files('D:/18_1/Travel-Maker/libs/additionnal.jar')
+//      implementation files('D:/18_1/Travel-Maker/libs/activation.jar')
+}
