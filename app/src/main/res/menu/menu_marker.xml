@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/option_delete"
+        android:icon="@drawable/delete"
+        android:title="remove"/>
+    <!--
+    <item android:id="@+id/option_forward"
+        android:title="forward"/>
+    <item android:id="@+id/option_backward"
+        android:title="backward"/>-->
+
+    <item android:id="@+id/option_residence"
+        android:icon="@drawable/marker_hotel"
+        android:title="Home"/>
+    <item android:id="@+id/option_restaurant"
+        android:icon="@drawable/marker_restaurant"
+        android:title="Food"/>
+    <item android:id="@+id/option_shopping"
+        android:icon="@drawable/marker_shopping"
+        android:title="Shopping"/>
+    <item android:id="@+id/option_transport"
+        android:icon="@drawable/marker_transport"
+        android:title="Transportation"/>
+    <item android:id="@+id/option_default"
+        android:icon="@drawable/marker_default"
+        android:title="default" />
+
+</menu>

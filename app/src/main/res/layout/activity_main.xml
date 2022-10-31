@@ -1,0 +1,143 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dl_activity_main_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+<FrameLayout
+    android:id="@+id/fl_activity_main_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/relativeLayout_main">
+
+        <EditText
+            android:id="@+id/EditWhereToGo"
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            android:fontFamily="@font/nanumbarunpen_b"
+            android:layout_alignBottom="@+id/search_area"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/editText_hint"
+            android:singleLine="true"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/EditWhereToGo"
+            android:layout_marginTop="10dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/progText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progressBar"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/nanumbarunpen_b" />
+
+        <Button
+            android:id="@+id/search_area"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="238dp"
+            android:layout_toEndOf="@+id/EditWhereToGo"
+            android:background="@drawable/search_icon"
+            android:onClick="mapMain" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:stretchColumns="*"
+        android:background="@color/grayblue"
+        >
+
+        <TableRow android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/plan_action_button"
+                android:layout_width="10dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/plan_icon"
+                android:onClick="showPlanList"/>
+
+            <ImageButton
+                android:id="@+id/calendar_action_button"
+                android:layout_width="10dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/calendar_icon"
+                android:onClick="calenderMain" />
+
+            <ImageButton
+                android:id="@+id/menu_action_button"
+                android:layout_width="10dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:src="@drawable/menu_icon"
+                android:onClick="menuMain"/>
+        </TableRow>
+
+        <TableRow>
+            <com.ellalee.travelmaker.NewFont
+                android:id="@+id/plan_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="My plan"
+                android:textSize="15dp"
+                android:textColor="@color/white"/>
+
+            <com.ellalee.travelmaker.NewFont
+                android:id="@+id/calendar_text"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Calendar"
+                android:textSize="15dp"
+                android:textColor="@color/white" />
+
+
+            <com.ellalee.travelmaker.NewFont
+                android:id="@+id/menu_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Menu"
+                android:textSize="15dp"
+                android:textColor="@color/white"/>
+        </TableRow>
+    </TableLayout>
+
+    </RelativeLayout>
+</FrameLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/lv_activity_main_nav_list"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="#EDEDED"
+        android:choiceMode="singleChoice"
+        app:headerLayout = "@layout/navigation_head"
+        app:menu = "@menu/menu_drawer"
+        />
+</android.support.v4.widget.DrawerLayout>
